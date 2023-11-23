@@ -1,0 +1,8 @@
+Instalar node.js
+Instalar postgreeSQL
+npm install pg 
+npm install express
+node (nome do arquivo js) // para executar, o terminal tem que estar dentro da pasta JS.BlogBit nesse caso
+
+* feito apenas uma vez
+npm init -y // para criar package.json

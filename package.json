@@ -1,0 +1,12 @@
+{
+  "name": "js.blogbit",
+  "version": "1.0.0",
+  "description": "Um blog proposto pela bit, possivelmente desenvolvido em HTML, CSS, JS e PostgreeSQL.",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
