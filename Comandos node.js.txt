@@ -1,7 +1,8 @@
 Instalar node.js
 Instalar postgreeSQL
-npm install pg 
-npm install express
+npm install pg na pasta do javascript
+npm install express na pasta do javascript
+npm install tailwindcss na pasta do javascript
 node (nome do arquivo js) // para executar, o terminal tem que estar dentro da pasta JS.BlogBit nesse caso
 
 * feito apenas uma vez
