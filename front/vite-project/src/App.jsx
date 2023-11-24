@@ -9,9 +9,9 @@ import { Post } from './components/Post'
 function App() {
   const [posts, setPosts] = useState([])
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/posts').then((response) => {
-      setPosts(response.data)
+  useEffect(() => { 
+    axios.get('http://localhost:3000/posts').then((response) => { // conecta com o backend
+      setPosts(response.data) // pega o dado posts do banco de dados e envia para o frontend
     });
   }, [])
 
@@ -19,7 +19,7 @@ function App() {
     <>
       <h1>Posts</h1>
       {posts.map((post, index) => (
-        <Post key={index} id={post.id} titulo={post.titulo}/>
+        <Post key={index} id={post.id} titulo={post.titulo}/> // mapeia os posts e os envia para o frontend
       ))}
       <Square color="blue"/>
       <Square color="red"/>

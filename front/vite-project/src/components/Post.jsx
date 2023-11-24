@@ -1,4 +1,4 @@
-export const Post = (props) => {
+export const Post = (props) => { // criando um "padrão" para os posts
     return (
         <div key={props.id}>
             <h1>{props.titulo}</h1>

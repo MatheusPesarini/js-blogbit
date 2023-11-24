@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(cors());
 
-const config = {
+const config = { // Configuração de acesso ao banco de dados
     user: 'postgres',
     host: 'localhost',
     database: 'postgres',
@@ -28,11 +28,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', async(req, res) => {
-    const posts = await client.query('SELECT * FROM posts');
+    const posts = await client.query('SELECT * FROM posts'); // Consultando a tabela posts do banco de dados
     res.send(posts.rows);
-    //const {posts} = await client.query('SELECT * FROM posts', res.send(posts));
-});
+}); 
 
 app.listen(port, () => {
-    console.log(`Servidor rodando na porta http://localhost:${port}`);
+    console.log(`Servidor rodando na porta http://localhost:${port}`); // configurando o link com a porta do servidor
 });
