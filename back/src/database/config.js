@@ -16,4 +16,11 @@ client.connect()
     .then(() => console.log('Conexão bem-sucedida com o PostgreSQL'))
     .catch(err => console.error('Erro de conexão com o PostgreSQL', err));
 
-module.exports = client;    
+module.exports = {
+    HOST:"localhost",
+    USER:"postgres",
+    PASSWORD:"4435",
+    DB:"BlogBIT",
+    dialect:"postgres",
+    
+}   
