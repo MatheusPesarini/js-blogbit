@@ -45,9 +45,20 @@ app.get('/posts', async(req, res) => {
     res.send(posts.rows);
 }); 
 
-app.get('/delete/:id', (req, res) => {
-    client.query('DELETE FROM public.posts WHERE id = $1', [parseInt(req.params.id)]) // ESSE TIPO DE LEITURA DE DADOS SÓ FUNCIONA EM PORTAS GET, POIS NÃO EXISTE BODY NA REQUISIÇÃO (EXISTE APENAS EM REQUISICOES POST)
-    res.status(200).send("Post removido com sucesso!");
+app.get('/delete/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+    
+        if (isNaN(postId)) {
+            throw new Error('ID inválido');
+        }
+    
+        const result = client.query('DELETE FROM public.posts WHERE id = $1', [parseInt(req.params.id)]) // ESSE TIPO DE LEITURA DE DADOS SÓ FUNCIONA EM PORTAS GET, POIS NÃO EXISTE BODY NA REQUISIÇÃO (EXISTE APENAS EM REQUISICOES POST)
+        res.status(200).send("Post removido com sucesso!");
+    } catch (error) {
+        console.error('Erro ao remover post:', error);
+        res.status(500).send('Erro ao remover post');
+    }
 })
 
 app.use(bodyParser.json());

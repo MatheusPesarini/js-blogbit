@@ -29,8 +29,9 @@ function App() {
     .then((response) => {
       if(response.status === 200){ // Resposta positiva (post foi inserido)
         setPosts((postsAnteriores) => {
-          const novoComentario = {titulo: postTitle, texto: postContent}
-          return [...postsAnteriores, novoComentario] // Tudo o que estava antes + o novo post criado
+          const lastId = postsAnteriores.length > 0 ? postsAnteriores[postsAnteriores.length - 1].id : 0;
+          const novoComentario = { id: lastId + 1, titulo: postTitle, texto: postContent };
+          return [...postsAnteriores, novoComentario];
         })
 
         setPostTitle("")

@@ -15,6 +15,7 @@ export const Post = (props) => { // criando um "padrão" para os posts
     }, []);
 
     const handleDeletePost = () => {
+        console.log(props.id);
         axios.get(`http://localhost:3000/delete/${props.id}`)
         .then((response) => { 
             if(response.status === 200){ // Post foi removido
