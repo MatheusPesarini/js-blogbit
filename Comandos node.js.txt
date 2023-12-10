@@ -1,9 +1,8 @@
 Instalar node.js
 Instalar postgreeSQL
-npm install pg na pasta do javascript
-npm install express na pasta do javascript
-npm i na pasta do javascript
-node (nome do arquivo js) // para executar, o terminal tem que estar dentro da pasta JS.BlogBit nesse caso
+npm install no terminal na pasta do backend onde está os dois .json e na pasta do reactvite onde está o outro .json para instalar os pacotes
+
+code runner para executar o nodejs e npm run dev para executar pelo react na pasta dele
 
 * feito apenas uma vez
 npm init -y // para criar package.json
