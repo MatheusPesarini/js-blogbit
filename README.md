@@ -1,3 +1,3 @@
 # JS.BlogBit
-Um blog proposto pela bit, possivelmente desenvolvido em React, Node.JS e PostgreeSQL.
+Um blog (CRUD) proposto pela BIT desenvolvido em React, Node.JS e PostgreeSQL.
 
