@@ -12,7 +12,7 @@ export const Post = (props) => { // criando um "padrão" para os posts
     useEffect(() => {
         setPostTitle(props.titulo);
         setPostContent(props.texto);
-    }, []);
+    }, [props.titulo, props.texto]);
 
     const handleDeletePost = () => {
         console.log(props.id);
@@ -37,11 +37,7 @@ export const Post = (props) => { // criando um "padrão" para os posts
         })
         .then((response) => {
           if(response.status === 200){ // Resposta positiva (post foi inserido)
-            setPostTitle(editTitle);
-            setPostContent(editTexto);
-            setEditTitle("");
-            setEditTexto("");
-            setShowEditModal(false);
+            document.location.assign("/");
           }
         })
         .catch(error => {
@@ -52,7 +48,6 @@ export const Post = (props) => { // criando um "padrão" para os posts
     const handleEditPost = () => {
         setShowEditModal(true);
     }
-
 
     return (
         <div>
