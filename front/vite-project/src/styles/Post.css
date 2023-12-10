@@ -1,0 +1,14 @@
+.modal {
+    position: absolute as absolute;
+    left: '50%'; 
+    top: '50%';
+    transform: 'translate(-50%, -50%)';
+    background-color: #1f1f1f;
+    color: #FFF;
+    height: 50vh;
+    width: 50vw;
+}
+
+.modalButtons {
+    display: flex;
+}
