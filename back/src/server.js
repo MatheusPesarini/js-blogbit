@@ -27,7 +27,6 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-origin", "*")
     res.setHeader('Access-Control-Allow-Methods', "GET, PUT, POST, DELETE, PATCH, OPTIONS")
     res.header("Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization, Origin, X-Auth-Token")
-    app.use(cors());
     next();
 })
 
@@ -88,7 +87,6 @@ app.post("/create", async (req, res) => {
     }
 })
 
-app.use(bodyParser.json());
 app.post("/edit", async (req, res) => {
     let {id, title, texto} = req.body;
 
