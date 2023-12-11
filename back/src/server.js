@@ -63,15 +63,6 @@ app.get('/delete/:id', async (req, res) => {
 app.use(bodyParser.json());
 app.post("/create", async (req, res) => {
     let {title, texto, tags} = req.body;
-
-    /*
-    if(!title || !texto){
-        res.status(500).send("Preencha todos os campos!");
-    }
-    if(title.length < 2){
-        res.status(500).send("O título necessita ter ao menos dois caracteres!");
-    }
-    */
    
     if(title && texto){
         const dbquery = await client.query(`INSERT INTO public.posts (titulo, texto, tags) 
@@ -89,15 +80,6 @@ app.post("/create", async (req, res) => {
 
 app.post("/edit", async (req, res) => {
     let {id, title, texto} = req.body;
-
-    /*
-    if(!title || !texto){
-        res.status(500).send("Preencha todos os campos!");
-    }
-    if(title.length < 2){
-        res.status(500).send("O título necessita ter ao menos dois caracteres!");
-    }
-    */
    
     if(id && title && texto){
         const dbquery = await client.query(`UPDATE public.posts SET titulo = $1, texto = $2 
