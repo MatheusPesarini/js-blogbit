@@ -50,7 +50,7 @@ export const Post = (props) => { // criando um "padrão" para os posts
     }
 
     return (
-        <div>
+        <div className="Posts">
             <h1>{postTitle}</h1>
             <h3>{postContent}</h3>
             <h4>{props.data.getFullYear().toString()}</h4>
@@ -58,12 +58,11 @@ export const Post = (props) => { // criando um "padrão" para os posts
                 <button style={{marginRight: 10}} onClick={handleDeletePost}>DELETAR</button>
                 <button onClick={handleEditPost}>EDITAR</button>
             </div>
-
             <div className="modal" style={{display: showEditModal ? 'block' : 'none'}}>
                 <p>EDITAR POST:</p>
                 <div className="modalInputs">
-                    <input type="text" placeholder={props.titulo} onChange={(text) => setEditTitle(text.target.value)}/>
-                    <input type="text" placeholder={props.texto} onChange={(text) => setEditTexto(text.target.value)}/>
+                    <input type="text" className = "TituloEd" placeholder={props.titulo} onChange={(text) => setEditTitle(text.target.value)}/>
+                    <input type="text" className = "TextoEd" placeholder={props.texto} onChange={(text) => setEditTexto(text.target.value)}/>
                 </div>
                 <div className="modalButtons">
                     <button onClick={handleEditModal}>Editar</button>

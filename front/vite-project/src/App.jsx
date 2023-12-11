@@ -45,13 +45,15 @@ function App() {
 
   return (
     <>
+    <div><img src="../favicon.ico" alt="BIT" style={{ width: '100px', height: 'auto' }}/></div>
+    <div className = "Interface"></div>
       <h1>Posts</h1>
       {posts.map((post, index) => (
         <Post key={index} id={post.id} titulo={post.titulo} texto={post.texto} data={new Date()}/> // mapeia os posts e os envia para o frontend
       ))}
 
-      <input type="text" placeholder="Digite o titulo do post" value={postTitle} onChange={(title) => setPostTitle(title.target.value)}/>
-      <input type="text" placeholder="Digite o conteúdo do post" value={postContent} onChange={(body) => setPostContent(body.target.value)}/>
+      <input type="text" className = "Titulo" placeholder="Digite o titulo do post" value={postTitle} onChange={(title) => setPostTitle(title.target.value)}/>
+      <input type="text" className = "Texto" placeholder="Digite o conteúdo do post" value={postContent} onChange={(body) => setPostContent(body.target.value)}/>
       <button onClick={handleAddPost}>Criar Post</button>
     </>
   )

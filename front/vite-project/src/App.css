@@ -1,9 +1,24 @@
 #root {
+  border-radius: 20px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+
+.Titulo {
+  border: #484848;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+}
+
+.Texto {
+  border: #484848;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+} 
 
 .logo {
   height: 6em;
