@@ -43,3 +43,8 @@
     align-items: center;
     display: flex;
 }
+
+.tagsCustom {
+    font-style: italic;
+    font-size: 1em;
+}

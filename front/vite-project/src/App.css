@@ -10,15 +10,22 @@
   border: #484848;
   border-radius: 5px;
   padding: 8px;
-  margin: 10px;
+  margin: 6px;
 }
 
 .Texto {
   border: #484848;
   border-radius: 5px;
   padding: 8px;
-  margin: 10px;
+  margin: 6px;
 } 
+
+.Tags{
+  border: #484848;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 6px;
+}
 
 .logo {
   height: 6em;

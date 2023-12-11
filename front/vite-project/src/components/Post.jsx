@@ -8,11 +8,13 @@ export const Post = (props) => { // criando um "padrão" para os posts
     const [editTexto, setEditTexto] = useState("");
     const [postTitle, setPostTitle] = useState("");
     const [postContent, setPostContent] = useState("");
+    const [postTags, setPostTags] = useState([]);
 
     useEffect(() => {
         setPostTitle(props.titulo);
         setPostContent(props.texto);
-    }, [props.titulo, props.texto]);
+        setPostTags(props.tags);
+    }, [props.titulo, props.texto, props.tags]);
 
     const handleDeletePost = () => {
         console.log(props.id);
@@ -53,6 +55,11 @@ export const Post = (props) => { // criando um "padrão" para os posts
         <div className="Posts">
             <h1>{postTitle}</h1>
             <h3>{postContent}</h3>
+            <p className="tagsCustom">
+            {postTags.map((tag, index) => (
+                <span key={index} style={{marginLeft: 10}}>#{tag}</span> // Aqui vc cria o componente individual pra tag
+            ))}
+            </p>
             <h4>{props.data.getFullYear().toString()}</h4>
             <div>
                 <button style={{marginRight: 10}} onClick={handleDeletePost}>DELETAR</button>

@@ -62,7 +62,7 @@ app.get('/delete/:id', async (req, res) => {
 
 app.use(bodyParser.json());
 app.post("/create", async (req, res) => {
-    let {title, texto} = req.body;
+    let {title, texto, tags} = req.body;
 
     /*
     if(!title || !texto){
@@ -74,10 +74,10 @@ app.post("/create", async (req, res) => {
     */
    
     if(title && texto){
-        const dbquery = await client.query(`INSERT INTO public.posts (titulo, texto) 
-            VALUES ($1, $2)
+        const dbquery = await client.query(`INSERT INTO public.posts (titulo, texto, tags) 
+            VALUES ($1, $2, $3)
             RETURNING id`, 
-            [title, texto]
+            [title, texto, tags]
         );
 
         console.log("Novo post inserido!"); // Resposta na API!
