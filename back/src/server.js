@@ -23,7 +23,7 @@ app.listen(port, () => {
     console.log(`Servidor rodando na porta http://localhost:${port}`); // configurando o link com a porta do servidor
 });
 
-app.use(function (req, res, next) {
+app.use(function (req, res, next) { // configurando o acesso ao servidor
     res.header("Access-Control-Allow-origin", "*")
     res.setHeader('Access-Control-Allow-Methods', "GET, PUT, POST, DELETE, PATCH, OPTIONS")
     res.header("Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization, Origin, X-Auth-Token")
@@ -35,7 +35,7 @@ client.connect()
     .then(() => console.log('Conexão bem-sucedida com o PostgreSQL'))
     .catch(err => console.error('Erro de conexão com o PostgreSQL', err));
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { // configurando a rota principal
     res.json({ message: 'Hello World!'});
 });
 
@@ -44,7 +44,7 @@ app.get('/posts', async(req, res) => {
     res.send(posts.rows);
 }); 
 
-app.get('/delete/:id', async (req, res) => {
+app.get('/delete/:id', async (req, res) => { // Rota para deletar um post
     try {
         const postId = req.params.id;
     
@@ -61,7 +61,7 @@ app.get('/delete/:id', async (req, res) => {
 })
 
 app.use(bodyParser.json());
-app.post("/create", async (req, res) => {
+app.post("/create", async (req, res) => { // Rota para criar um novo post
     let {title, texto, tags} = req.body;
    
     if(title && texto){
@@ -71,14 +71,14 @@ app.post("/create", async (req, res) => {
             [title, texto, tags]
         );
 
-        console.log("Novo post inserido!"); // Resposta na API!
+        console.log("Novo post inserido!"); // Resposta na API do node!
         res.status(200).send("Post inserido com sucesso!"); // Resposta para o cliente!
     } else {
         res.status(500).send("Preencha todos os campos!");
     }
 })
 
-app.post("/edit", async (req, res) => {
+app.post("/edit", async (req, res) => { // Rota para editar um post
     let {id, title, texto} = req.body;
    
     if(id && title && texto){
@@ -94,8 +94,3 @@ app.post("/edit", async (req, res) => {
         res.status(500).send("Preencha todos os campos!");
     }
 })
-
-app.post("/upload-post", (req, res) => {    
-    console.log("informacoes post estao sendo enviadas", req.body);
-    res.sendStatus(200);
-});
