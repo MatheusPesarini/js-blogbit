@@ -64,7 +64,7 @@ function App() {
       <h1>Posts</h1>
       <input type="text" className = "Titulo" placeholder="Digite o titulo do post" value={postTitle} onChange={(title) => setPostTitle(title.target.value)}/>
       <input type="text" className = "Texto" placeholder="Digite o conteúdo do post" value={postContent} onChange={(body) => setPostContent(body.target.value)}/>
-      <input type="text" className = "Tags" placeholder="Tag1, tag2..." value={postTags} onChange={(tags) => setPostTags(tags.target.value)}/>
+      <input type="text" className = "Tags" placeholder="Tag1,tag2..." value={postTags} onChange={(tags) => setPostTags(tags.target.value)}/>
       <button onClick={handleAddPost}>Criar Post</button>
     
       {posts.map((post, index) => (
