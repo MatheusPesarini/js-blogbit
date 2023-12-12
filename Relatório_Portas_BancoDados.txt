@@ -1,0 +1,19 @@
+Blog em Node.js (express) + PostgreSQL (pgAdmin)
+
+Tabela posts do banco de dados BlogBIT
+Esta tabela foi utilizada para armazenar os posts do blog, e contém as colunas a seguir: id (serial), titulo (text), texto (texto), tags (text[]). Logo, cada post terá título, conteúdo, data de publicação (incluindo hora do dia), tags que indiquem o assunto do post, um id que seja uma chave primária que torna o post único, e um nome atribuído ao autor.
+
+Descrição das rotas e funcionamento
+O cliente da requisição do node.js é iniciado na porta 3000 e o servidor na porta 5432.
+
+localhost:5432/posts
+Nessa porta é feito apenas a verificação das inserções no banco de dados e retornado um "resultado".
+
+localhost:5432/remove
+Um id deve ser passado como parâmetro, e então o servidor irá remover da tabela posts o post cujo ID corresponda ao parâmetro, o ID recebido no backend é verificado se é um número ou não e exibido caso a remoção tenha sido feito com sucesso ou não.
+
+localhost:5432/create
+Nessa porta é feito a inserção dos dados na tabela do banco de dados, em especifico do id (auto-incrementavel, serial), titulo, texto e tags, é também verificado se existe dados na variavel do titulo e texto e exibido no servidor se a inserção ocorreu tudo certo.
+
+localhost:5432/edit
+Nessa porta é passado como parâmetro o ID da postagem selecionada, seu titulo e texto digitado para edição. É feito o processo com o banco de dados para update desses dados e verificado se é o ID certo e exibido mensagens para o servidor caso o post tenha sido editado com sucesso.
